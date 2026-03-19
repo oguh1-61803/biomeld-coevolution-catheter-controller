@@ -12,7 +12,7 @@ To adapt the physics engine to the dynamics of SAMs, two modifications to the so
 
 > **Architecture**
 
-Since the evolutionary process implies a simulation task, the runtime takes significant time. This software has been designed to reduce the time spent finding suitable SAMs and their controllers. It uses concurrency and was designed under a client-server architecture. Generally, the cooperative coevolutionary genetic algorithm (CCGA) is executed on the client side, whereas the core of the fitness function (Voxelyze) is executed on the server side.
+Since the evolutionary process implies a simulation task, the runtime takes significant time. This software has been designed to reduce the time spent finding suitable SAMs and their controllers. It uses concurrency and was designed under a client-server architecture. The cooperative coevolutionary genetic algorithm (CCGA) is executed on the client side, whereas the core of the fitness function (Voxelyze) is executed on the server side.
 
 The software of the client side was written in Python 3.11, and Python 3.10 was employed for the code of the server side.
 
