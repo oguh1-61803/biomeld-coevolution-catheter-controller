@@ -18,11 +18,11 @@ class CoevolutionEvaluator:
     MAPPING_REFERENCE = 0.5
     POSITIVE_MAPPING_REFERENCE = math.pi * 2
     NEGATIVE_MAPPING_REFERENCE = POSITIVE_MAPPING_REFERENCE * -1.0
-    TWO_INTERACTIONS_WEIGHTS = [0.6, 0.4]
-    THREE_INTERACTIONS_WEIGHTS = [0.5, 0.3, 0.2]
-    FIVE_INTERACTIONS_WEIGHTS = [0.4, 0.3, 0.15, 0.1, 0.05]
-    SEVEN_INTERACTIONS_WEIGHTS = [0.35, 0.25, 0.15, 0.12, 0.07, 0.04, 0.02]
-    TEN_INTERACTIONS_WEIGHTS = [0.3, 0.2, 0.15, 0.12, 0.08, 0.05, 0.04, 0.03, 0.02, 0.01]
+    WEIGHTS_TWO_COLLABORATORS = [0.6, 0.4]
+    WEIGHTS_THREE_COLLABORATORS = [0.5, 0.3, 0.2]
+    WEIGHTS_FIVE_COLLABORATORS = [0.4, 0.3, 0.15, 0.1, 0.05]
+    WEIGHTS_SEVEN_COLLABORATORS = [0.35, 0.25, 0.15, 0.12, 0.07, 0.04, 0.02]
+    WEIGHTS_TEN_COLLABORATORS = [0.3, 0.2, 0.15, 0.12, 0.08, 0.05, 0.04, 0.03, 0.02, 0.01]
 
     FITTEST_INDIVIDUAL_DATA = "data_ fittest_individual"
     POPULATION_DATA = "population_average_fitness"
@@ -574,8 +574,8 @@ class CoevolutionEvaluator:
                     values_aux.append(matrix_of_fitness_values[m][c])
 
                 values_aux.sort(reverse=True)
-                fitness_value = ((values_aux[0] * self.TWO_INTERACTIONS_WEIGHTS[0]) +
-                                 (values_aux[1] * self.TWO_INTERACTIONS_WEIGHTS[1]))
+                fitness_value = ((values_aux[0] * self.WEIGHTS_TWO_COLLABORATORS[0]) +
+                                 (values_aux[1] * self.WEIGHTS_TWO_COLLABORATORS[1]))
                 fitness_values.append(fitness_value)
 
         elif len(matrix_of_fitness_values) == 3:
@@ -588,9 +588,9 @@ class CoevolutionEvaluator:
                     values_aux.append(matrix_of_fitness_values[m][c])
 
                 values_aux.sort(reverse=True)
-                fitness_value = ((values_aux[0] * self.THREE_INTERACTIONS_WEIGHTS[0]) +
-                                 (values_aux[1] * self.THREE_INTERACTIONS_WEIGHTS[1]) +
-                                 (values_aux[2] * self.THREE_INTERACTIONS_WEIGHTS[2]))
+                fitness_value = ((values_aux[0] * self.WEIGHTS_THREE_COLLABORATORS[0]) +
+                                 (values_aux[1] * self.WEIGHTS_THREE_COLLABORATORS[1]) +
+                                 (values_aux[2] * self.WEIGHTS_THREE_COLLABORATORS[2]))
                 fitness_values.append(fitness_value)
 
         elif len(matrix_of_fitness_values) == 5:
@@ -604,11 +604,11 @@ class CoevolutionEvaluator:
                     values_aux.append(matrix_of_fitness_values[m][c])
 
                 values_aux.sort(reverse=True)
-                fitness_value = ((values_aux[0] * self.FIVE_INTERACTIONS_WEIGHTS[0]) +
-                                 (values_aux[1] * self.FIVE_INTERACTIONS_WEIGHTS[1]) +
-                                 (values_aux[2] * self.FIVE_INTERACTIONS_WEIGHTS[2]) +
-                                 (values_aux[3] * self.FIVE_INTERACTIONS_WEIGHTS[3]) +
-                                 (values_aux[4] * self.FIVE_INTERACTIONS_WEIGHTS[4]))
+                fitness_value = ((values_aux[0] * self.WEIGHTS_FIVE_COLLABORATORS[0]) +
+                                 (values_aux[1] * self.WEIGHTS_FIVE_COLLABORATORS[1]) +
+                                 (values_aux[2] * self.WEIGHTS_FIVE_COLLABORATORS[2]) +
+                                 (values_aux[3] * self.WEIGHTS_FIVE_COLLABORATORS[3]) +
+                                 (values_aux[4] * self.WEIGHTS_FIVE_COLLABORATORS[4]))
 
                 fitness_values.append(fitness_value)
 
@@ -623,13 +623,13 @@ class CoevolutionEvaluator:
                     values_aux.append(matrix_of_fitness_values[m][c])
 
                 values_aux.sort(reverse=True)
-                fitness_value = ((values_aux[0] * self.SEVEN_INTERACTIONS_WEIGHTS[0]) +
-                                 (values_aux[1] * self.SEVEN_INTERACTIONS_WEIGHTS[1]) +
-                                 (values_aux[2] * self.SEVEN_INTERACTIONS_WEIGHTS[2]) +
-                                 (values_aux[3] * self.SEVEN_INTERACTIONS_WEIGHTS[3]) +
-                                 (values_aux[4] * self.SEVEN_INTERACTIONS_WEIGHTS[4]) +
-                                 (values_aux[5] * self.SEVEN_INTERACTIONS_WEIGHTS[5]) +
-                                 (values_aux[6] * self.SEVEN_INTERACTIONS_WEIGHTS[6]))
+                fitness_value = ((values_aux[0] * self.WEIGHTS_SEVEN_COLLABORATORS[0]) +
+                                 (values_aux[1] * self.WEIGHTS_SEVEN_COLLABORATORS[1]) +
+                                 (values_aux[2] * self.WEIGHTS_SEVEN_COLLABORATORS[2]) +
+                                 (values_aux[3] * self.WEIGHTS_SEVEN_COLLABORATORS[3]) +
+                                 (values_aux[4] * self.WEIGHTS_SEVEN_COLLABORATORS[4]) +
+                                 (values_aux[5] * self.WEIGHTS_SEVEN_COLLABORATORS[5]) +
+                                 (values_aux[6] * self.WEIGHTS_SEVEN_COLLABORATORS[6]))
 
                 fitness_values.append(fitness_value)
 
@@ -643,20 +643,20 @@ class CoevolutionEvaluator:
                     values_aux.append(matrix_of_fitness_values[m][c])
 
                 values_aux.sort(reverse=True)
-                fitness_value = ((values_aux[0] * self.TEN_INTERACTIONS_WEIGHTS[0]) +
-                                 (values_aux[1] * self.TEN_INTERACTIONS_WEIGHTS[1]) +
-                                 (values_aux[2] * self.TEN_INTERACTIONS_WEIGHTS[2]) +
-                                 (values_aux[3] * self.TEN_INTERACTIONS_WEIGHTS[3]) +
-                                 (values_aux[4] * self.TEN_INTERACTIONS_WEIGHTS[4]) +
-                                 (values_aux[5] * self.TEN_INTERACTIONS_WEIGHTS[5]) +
-                                 (values_aux[6] * self.TEN_INTERACTIONS_WEIGHTS[6]) +
-                                 (values_aux[7] * self.TEN_INTERACTIONS_WEIGHTS[7]) +
-                                 (values_aux[8] * self.TEN_INTERACTIONS_WEIGHTS[8]) +
-                                 (values_aux[9] * self.TEN_INTERACTIONS_WEIGHTS[9]))
+                fitness_value = ((values_aux[0] * self.WEIGHTS_TEN_COLLABORATORS[0]) +
+                                 (values_aux[1] * self.WEIGHTS_TEN_COLLABORATORS[1]) +
+                                 (values_aux[2] * self.WEIGHTS_TEN_COLLABORATORS[2]) +
+                                 (values_aux[3] * self.WEIGHTS_TEN_COLLABORATORS[3]) +
+                                 (values_aux[4] * self.WEIGHTS_TEN_COLLABORATORS[4]) +
+                                 (values_aux[5] * self.WEIGHTS_TEN_COLLABORATORS[5]) +
+                                 (values_aux[6] * self.WEIGHTS_TEN_COLLABORATORS[6]) +
+                                 (values_aux[7] * self.WEIGHTS_TEN_COLLABORATORS[7]) +
+                                 (values_aux[8] * self.WEIGHTS_TEN_COLLABORATORS[8]) +
+                                 (values_aux[9] * self.WEIGHTS_TEN_COLLABORATORS[9]))
                 fitness_values.append(fitness_value)
 
         # When any of these cases occurs, the weighted mean is calculated in a different manner. Arguably, this behaviour
-        # is triggered when the NEAT library adds some individuals to the population.
+        # is triggered when to NEAT library adds some individuals to the population.
         elif len(matrix_of_fitness_values) == 4 or len(matrix_of_fitness_values) == 6 or len(matrix_of_fitness_values) == 20:
 
             for c in range(len(matrix_of_fitness_values[0])):
@@ -673,8 +673,8 @@ class CoevolutionEvaluator:
 
                     first_value = (values_aux[0] + values_aux[1]) / 2
                     second_value = (values_aux[2] + values_aux[3]) / 2
-                    fitness_value = ((first_value * self.TWO_INTERACTIONS_WEIGHTS[0]) +
-                                     (second_value * self.TWO_INTERACTIONS_WEIGHTS[1]))
+                    fitness_value = ((first_value * self.WEIGHTS_TWO_COLLABORATORS[0]) +
+                                     (second_value * self.WEIGHTS_TWO_COLLABORATORS[1]))
                     fitness_values.append(fitness_value)
 
                 elif len(values_aux) == 6:
@@ -682,9 +682,9 @@ class CoevolutionEvaluator:
                     first_value = (values_aux[0] + values_aux[1]) / 2
                     second_value = (values_aux[2] + values_aux[3]) / 2
                     third_value = (values_aux[4] + values_aux[5]) / 2
-                    fitness_value = ((first_value * self.THREE_INTERACTIONS_WEIGHTS[0]) +
-                                     (second_value * self.THREE_INTERACTIONS_WEIGHTS[1]) +
-                                     (third_value * self.THREE_INTERACTIONS_WEIGHTS[2]))
+                    fitness_value = ((first_value * self.WEIGHTS_THREE_COLLABORATORS[0]) +
+                                     (second_value * self.WEIGHTS_THREE_COLLABORATORS[1]) +
+                                     (third_value * self.WEIGHTS_THREE_COLLABORATORS[2]))
                     fitness_values.append(fitness_value)
 
                 elif len(values_aux) == 20:
@@ -699,16 +699,16 @@ class CoevolutionEvaluator:
                     eighth_value = (values_aux[14] + values_aux[15]) / 2
                     ninth_value = (values_aux[16] + values_aux[17]) / 2
                     tenth_value = (values_aux[18] + values_aux[19]) / 2
-                    fitness_value = ((first_value * self.TEN_INTERACTIONS_WEIGHTS[0]) +
-                                     (second_value * self.TEN_INTERACTIONS_WEIGHTS[1]) +
-                                     (third_value * self.TEN_INTERACTIONS_WEIGHTS[2]) +
-                                     (fourth_value * self.TEN_INTERACTIONS_WEIGHTS[3]) +
-                                     (fifth_value * self.TEN_INTERACTIONS_WEIGHTS[4]) +
-                                     (sixth_value * self.TEN_INTERACTIONS_WEIGHTS[5]) +
-                                     (seventh_value * self.TEN_INTERACTIONS_WEIGHTS[6]) +
-                                     (eighth_value * self.TEN_INTERACTIONS_WEIGHTS[7]) +
-                                     (ninth_value * self.TEN_INTERACTIONS_WEIGHTS[8]) +
-                                     (tenth_value * self.TEN_INTERACTIONS_WEIGHTS[9]))
+                    fitness_value = ((first_value * self.WEIGHTS_TEN_COLLABORATORS[0]) +
+                                     (second_value * self.WEIGHTS_TEN_COLLABORATORS[1]) +
+                                     (third_value * self.WEIGHTS_TEN_COLLABORATORS[2]) +
+                                     (fourth_value * self.WEIGHTS_TEN_COLLABORATORS[3]) +
+                                     (fifth_value * self.WEIGHTS_TEN_COLLABORATORS[4]) +
+                                     (sixth_value * self.WEIGHTS_TEN_COLLABORATORS[5]) +
+                                     (seventh_value * self.WEIGHTS_TEN_COLLABORATORS[6]) +
+                                     (eighth_value * self.WEIGHTS_TEN_COLLABORATORS[7]) +
+                                     (ninth_value * self.WEIGHTS_TEN_COLLABORATORS[8]) +
+                                     (tenth_value * self.WEIGHTS_TEN_COLLABORATORS[9]))
                     fitness_values.append(fitness_value)
 
         else:
