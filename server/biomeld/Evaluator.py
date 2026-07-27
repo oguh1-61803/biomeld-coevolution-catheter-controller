@@ -5,7 +5,7 @@ import subprocess
 import re
 
 
-# This class is focused on the evaluation of phase offsets by using catheter morphologies.
+# This class is focused on the evaluation of SAMs and the phase offsets by using catheter morphologies.
 class Evaluator:
 
     # Necessary constants to evaluate phase offsets.
@@ -38,7 +38,7 @@ class Evaluator:
         self.evaluator_id = str(evaluator)
         print(self.evaluator_id)
 
-    # This method initialises the file that will be used to evaluate phase offsets and generates a directory where one
+    # This method initialises the file that will be used to evaluate SAMs and phase offsets. It generates a directory where one
     # Voxelyze is deployed.
     def initialise_xml_tree(self, conf):
 
