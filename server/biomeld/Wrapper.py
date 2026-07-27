@@ -4,7 +4,7 @@ import tornado.web
 import base64
 
 
-# This class initialises the Voxelyze instance and receives the phase offset (and morphologies) and returns the
+# This class initialises the Voxelyze instance and receives SAMs and phase offsets. It returns the
 # displacement reached by the morphology and the number of voxels of the morphology, which are used for evaluating
 # the phase offset.
 class Wrapper(tornado.web.RequestHandler):
@@ -22,7 +22,7 @@ class Wrapper(tornado.web.RequestHandler):
         self.evaluator.initialise_xml_tree(data)
         self.write({"status": "Evaluator (HyperNEAT - Catheter) %s initialised." % self.evaluator.evaluator_id})
 
-    # This method received the data related to the phase offset to either evaluate it or to generate the .vxa file
+    # This method received the data related to the SAM and the phase offsets to either evaluate it or to generate the .vxa file
     # containing the morphology.
     def get(self):
 
