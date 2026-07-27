@@ -1,4 +1,4 @@
-> # Coevolutionary-based desing of soft actuator morphologies for catheters and their controllers
+> # Coevolutionary-based design of soft actuator morphologies for catheters and their controllers
 
 This implementation utilises Neuroevolution of Augmenting Topologies (NEAT) to design soft actuator morphologies (SAMs) for catheters and their controllers. The implementation operates under a cooperative coevolutionary scheme. SAMs and the effect induced by controllers are simulated in a physics engine called Voxelyze, which can be found in the following GitHub repository:
 
