@@ -343,7 +343,7 @@ class CoevolutionEvaluator:
 
             return displacement
 
-    # This method gathers the material typy of a SAM.
+    # This method gathers the material type of a SAM.
     def get_catheter_material_data(self, catheter_morphology):
 
         coordinates_and_material_id = {}
@@ -656,7 +656,7 @@ class CoevolutionEvaluator:
                 fitness_values.append(fitness_value)
 
         # When any of these cases occurs, the weighted mean is calculated in a different manner. Arguably, this behaviour
-        # is triggered when to NEAT library adds some individuals to the population.
+        # is triggered when the NEAT library adds some individuals to the population.
         elif len(matrix_of_fitness_values) == 4 or len(matrix_of_fitness_values) == 6 or len(matrix_of_fitness_values) == 20:
 
             for c in range(len(matrix_of_fitness_values[0])):
